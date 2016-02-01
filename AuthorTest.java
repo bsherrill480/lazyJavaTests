@@ -17,14 +17,18 @@ public class AuthorTest {
 
     @Before
     public void setUp() throws Exception {
-        this.a1 = new Author("cat", "bird", "dog");
+        //CoolAuthor is a subclass of Author
+        this.a1 = new Author("cat",
+        "bird", "dog");
         this.a2 = new Author("cow", "pig", "chicken");
         this.a3 = new Author("cat", "bird", "dog");
         this.a4 = new Author("cat", "dog");
+        this.a5 = new TillyTad("cat", "dog");
+        this.a6 = new Author("cat", "dog", new Holly('name', 'age'));
+        this.a6 = new CoolAuthor("cool author", "dog", new Holly('name', 'age'));
     }
 
     @Test
-    public void testGetFirst() throws Exception {
         assertEquals(this.a1.getFirst(), "cat");
     }
 
